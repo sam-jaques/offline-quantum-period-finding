@@ -1,0 +1,4 @@
+operation, CNOT count, 1-qubit Clifford count, T count, R count, M count, Full depth, Full width, max width, initial width, extra width, comment , first arg, second arg
+SimonResourceWrappers.ElephantGroverEstimate, 1143414, 155901, 80952, 0, 15799, 338451, 1000,1000,  0, 1000, , 200, 1
+SimonResourceWrappers.ElephantGroverEstimate, 917106, 161677, 360952, 0, 1119, 47557, 800,800,  0, 800, , 160, 1
+SimonResourceWrappers.ElephantGroverEstimate, 1128831, 199052, 446328, 0, 1231, 55379, 880,880,  0, 880, , 176, 1

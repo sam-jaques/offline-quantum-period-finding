@@ -1,0 +1,4 @@
+operation, CNOT count, 1-qubit Clifford count, T count, R count, M count, Full depth, Full width, max width, initial width, extra width, comment , first arg, second arg
+SimonResourceWrappers.PrinceGroverEstimate, 47674, 8927, 16632, 0, 319, 3452, 256,256,  0, 256, , 64, 1
+SimonResourceWrappers.PrinceGroverEstimate, 95379, 17540, 33272, 0, 511, 6849, 384,384,  0, 384, , 64, 2
+SimonResourceWrappers.PrinceGroverEstimate, 143081, 26144, 49912, 0, 703, 10244, 512,512,  0, 512, , 64, 3

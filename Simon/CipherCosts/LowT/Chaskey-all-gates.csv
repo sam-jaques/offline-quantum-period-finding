@@ -1,0 +1,7 @@
+operation,CNOT count,1-qubit Clifford count,T count,R count,M count,Full depth,Full width,max width,initial width,extra width,comment,first arg,second arg
+SimonResourceWrappers.ChaskeyAttackEstimate,47901,14927,10752,0,2816,36290,171,171,0,171,,12,48
+SimonResourceWrappers.ChaskeyAttackEstimate,29673,9211,6656,0,1792,22459,171,171,0,171,,8,48
+SimonResourceWrappers.ChaskeyAttackEstimate,47916,14972,10752,0,2816,36289,171,171,0,171,,12,50
+SimonResourceWrappers.ChaskeyAttackEstimate,29689,9259,6656,0,1792,22465,171,171,0,171,,8,50
+SimonResourceWrappers.ChaskeyAttackEstimate,47907,14945,10752,0,2816,36291,171,171,0,171,,12,51
+SimonResourceWrappers.ChaskeyAttackEstimate,29682,9238,6656,0,1792,22464,171,171,0,171,,8,51

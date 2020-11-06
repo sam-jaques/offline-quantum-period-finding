@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.Quantum.Sdk/0.13.20102604">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <GenerateProgramFile>false</GenerateProgramFile>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ExcludeFromStyleCop Include="**\*.cs" Condition=" '$(Configuration)' == 'DebugNoStyleCop' " />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="filehelpers" Version="3.4.1" />
+    <PackageReference Include="Microsoft.Quantum.Standard" Version="0.13.20102604" />
+    <PackageReference Include="Microsoft.Quantum.Xunit" Version="0.13.20102604" />
+     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.4.0" />
+    <PackageReference Include="xunit" Version="2.4.1" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.1" />
+    <DotNetCliToolReference Include="dotnet-xunit" Version="2.3.1" />
+    <Reference Include="..\MicrosoftQuantumCrypto\bin\MinimizeT\netcoreapp3.1\MicrosoftQuantumCrypto.dll">
+
+    	<path>"..\MicrosoftQuantumCrypto\bin\MinimizeT\netcoreapp3.1\MicrosoftQuantumCrypto.dll"</path>
+
+    </Reference>
+  </ItemGroup>
+
+
+</Project>

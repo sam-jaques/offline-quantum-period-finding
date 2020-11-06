@@ -1,0 +1,4 @@
+operation,CNOT count,1-qubit Clifford count,T count,R count,M count,Full depth,Full width,max width,initial width,extra width,comment,size
+SimonResourceWrappers.FullElephantAttackEstimate,456011,78208,179200,0,160,23780,171,171,0,171,,160
+SimonResourceWrappers.FullElephantAttackEstimate,561611,96612,221760,0,176,27705,187,187,0,187,,176
+SimonResourceWrappers.FullElephantAttackEstimate,568420,74345,38880,0,7400,169530,411,411,0,411,,200

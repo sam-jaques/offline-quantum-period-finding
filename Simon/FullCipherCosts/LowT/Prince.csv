@@ -1,0 +1,2 @@
+operation,CNOT count,1-qubit Clifford count,T count,R count,M count,T depth,Full width,max width,initial width,extra width,comment,size
+SimonResourceWrappers.FullPrinceAttackEstimate,45859,7684,16128,0,128,720,139,139,0,139,,64

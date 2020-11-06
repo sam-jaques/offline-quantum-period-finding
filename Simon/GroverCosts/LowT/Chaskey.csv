@@ -1,0 +1,5 @@
+operation, CNOT count, 1-qubit Clifford count, T count, R count, M count, T depth, Full width, max width, initial width, extra width, comment , first arg, second arg
+SimonResourceWrappers.ChaskeyGroverEstimate, 39602, 13701, 9208, 0, 2559, 2128, 385,385,  0, 385, , 8, 1
+SimonResourceWrappers.ChaskeyGroverEstimate, 57766, 19225, 13304, 0, 3583, 3184, 385,385,  0, 385, , 12, 1
+SimonResourceWrappers.ChaskeyGroverEstimate, 78444, 27043, 18424, 0, 4991, 4242, 641,641,  0, 641, , 8, 2
+SimonResourceWrappers.ChaskeyGroverEstimate, 114806, 38193, 26616, 0, 7039, 6354, 641,641,  0, 641, , 12, 2
