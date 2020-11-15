@@ -1,8 +1,8 @@
 # Estimation Code For Offline Simon's Algorithm
 
-This code estimates the cost of running an offline Simon's attack \[[1](#1)\] against the block ciphers Chaskey \[[2](#2)\], Prince \[[3](#3)\], and Elephant \[[4](#4)\].
+This code estimates the cost of running an offline Simon's attack \[[1](#user-content-1)\] against the block ciphers Chaskey \[[2](#user-content-2)\], Prince \[[3](#user-content-3)\], and Elephant \[[4](#user-content-4)\].
 
-The details of the attack are presented in the associated paper \[[5](#5)\].
+The details of the attack are presented in the associated paper \[[5](#user-content-5)\].
 
 It consists of two main components
 - Q# code to compute circuit costs for the ciphers themselves and linear algebra
@@ -97,5 +97,5 @@ MicrosoftQuantumCrypto library, resource estimation, and PLU decompositions:
 [Elephant v1.1](https://csrc.nist.gov/CSRC/media/Projects/lightweight-cryptography/documents/round-2/spec-doc-rnd2/elephant-spec-round2.pdf)
 
 <a name="5"></a>\[5\] Xavier Bonnetain, Samuel Jaques:
-[Quantum period finding against symmetric primitives in practice].
+[Quantum period finding against symmetric primitives in practice](https://eprint.iacr.org/2020/1418).
  
