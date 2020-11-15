@@ -1,6 +1,8 @@
 # Estimation Code For Offline Simon's Algorithm
 
-This code estimates the cost of running an offline Simon's attack against the block ciphers Chaskey, Prince, and Elephant. 
+This code estimates the cost of running an offline Simon's attack \[[1](#1)\] against the block ciphers Chaskey \[[2](#2)\], Prince \[[3](#3)\], and Elephant \[[4](#4)\].
+
+The details of the attack are presented in the associated paper \[[5](#5)\].
 
 It consists of two main components
 - Q# code to compute circuit costs for the ciphers themselves and linear algebra
@@ -79,3 +81,21 @@ MicrosoftQuantumCrypto library, resource estimation, and PLU decompositions:
 - Christain Paquin
 - Michael Naehrig
 - Fernando Virdia
+
+# References
+
+<a name="1"></a>\[1\] Xavier Bonnetain, Akinori Hosoyamada, María Naya-Plasencia, Yu Sasaki, André Schrottenloher: 
+[Quantum attacks without superposition queries: The offline Simon’s algorithm](https://eprint.iacr.org/2019/614).
+
+<a name="2"></a>\[2\] Nicky Mouha, Bart Mennink, Anthony Van Herrewege, Dai Watanabe, Bart Preneel, Ingrid Verbauwhede: 
+[Chaskey: An efficient MAC algorithm for 32-bit microcontrollers](https://eprint.iacr.org/2014/386).
+
+<a name="3"></a>\[3\] Julia Borghoff, Anne Canteaut, Tim Güneysu, Elif Bilge Kavun, Miroslav Knežević, Lars R. Knudsen, Gregor Leander, Ventzislav Nikov, Christof Paar, Christian Rechberger, Peter Rombouts, Søren S. Thomsen, Tolga Yalçın:
+[PRINCE - A low-latency block cipher for pervasive computing applications](https://eprint.iacr.org/2012/529).
+
+<a name="4"></a>\[4\] Tim Beyne, Yu Long Chen, Christoph Dobraunig, Bart Mennink:
+[Elephant v1.1](https://csrc.nist.gov/CSRC/media/Projects/lightweight-cryptography/documents/round-2/spec-doc-rnd2/elephant-spec-round2.pdf)
+
+<a name="5"></a>\[5\] Xavier Bonnetain, Samuel Jaques:
+[Quantum period finding against symmetric primitives in practice].
+ 
