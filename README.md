@@ -1,6 +1,6 @@
 # Estimation Code For Offline Simon's Algorithm
 
-This code estimates the cost of running an offline Simon's attack \[[1](#user-content-1)\] against the block ciphers Chaskey \[[2](#user-content-2)\], Prince \[[3](#user-content-3)\], and Elephant \[[4](#user-content-4)\].
+This code estimates the cost of running an offline Simon's attack \[[1](#user-content-1)\] against the ciphers Chaskey \[[2](#user-content-2)\], Prince \[[3](#user-content-3)\], and Elephant \[[4](#user-content-4)\].
 
 The details of the attack are presented in the associated paper \[[5](#user-content-5)\].
 
