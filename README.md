@@ -1,6 +1,8 @@
 # Estimation Code For Offline Simon's Algorithm
 
-This code estimates the cost of running an offline Simon's attack against the block ciphers Chaskey, Prince, and Elephant. 
+This code estimates the cost of running an offline Simon's attack \[[1](#user-content-1)\] against the ciphers Chaskey \[[2](#user-content-2)\], Prince \[[3](#user-content-3)\], and Elephant \[[4](#user-content-4)\].
+
+The details of the attack are presented in the associated paper \[[5](#user-content-5)\].
 
 It consists of two main components
 - Q# code to compute circuit costs for the ciphers themselves and linear algebra
@@ -80,15 +82,20 @@ MicrosoftQuantumCrypto library, resource estimation, and PLU decompositions:
 - Michael Naehrig
 - Fernando Virdia
 
-# License
+# References
 
-MIT License
+<a name="1"></a>\[1\] Xavier Bonnetain, Akinori Hosoyamada, María Naya-Plasencia, Yu Sasaki, André Schrottenloher: 
+[Quantum attacks without superposition queries: The offline Simon’s algorithm](https://eprint.iacr.org/2019/614).
 
-Copyright 2020 Samuel Jaques, Xavier Bonnetain, Microsoft Corporation	
+<a name="2"></a>\[2\] Nicky Mouha, Bart Mennink, Anthony Van Herrewege, Dai Watanabe, Bart Preneel, Ingrid Verbauwhede: 
+[Chaskey: An efficient MAC algorithm for 32-bit microcontrollers](https://eprint.iacr.org/2014/386).
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+<a name="3"></a>\[3\] Julia Borghoff, Anne Canteaut, Tim Güneysu, Elif Bilge Kavun, Miroslav Knežević, Lars R. Knudsen, Gregor Leander, Ventzislav Nikov, Christof Paar, Christian Rechberger, Peter Rombouts, Søren S. Thomsen, Tolga Yalçın:
+[PRINCE - A low-latency block cipher for pervasive computing applications](https://eprint.iacr.org/2012/529).
 
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+<a name="4"></a>\[4\] Tim Beyne, Yu Long Chen, Christoph Dobraunig, Bart Mennink:
+[Elephant v1.1](https://csrc.nist.gov/CSRC/media/Projects/lightweight-cryptography/documents/round-2/spec-doc-rnd2/elephant-spec-round2.pdf)
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
+<a name="5"></a>\[5\] Xavier Bonnetain, Samuel Jaques:
+[Quantum period finding against symmetric primitives in practice](https://eprint.iacr.org/2020/1418).
+ 
