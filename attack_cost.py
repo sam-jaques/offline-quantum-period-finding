@@ -89,7 +89,7 @@ def log_subtract(x, y):
 		return x
 	return x + log2(1 - 2 ** (y - x))
 #########################################################
-
+#     Class and functions to deal with cost tuples
 #########################################################
 # Width: the inputs and outputs
 # Ancilla: Temporary qubits
@@ -158,8 +158,14 @@ def cost_compare(cost1, cost2):
 		return False
 
 
-# `strict` governs whether it accepts any match in the first_arg, 
-# or whether it needs both args to match
+# Obtains exact costs from a file output by Q#
+# Inputs:
+#    - filename: the .csv file of costs
+#    - first_arg and second_arg: for parameterized costs,
+#        (e.g., rank has parameters of height and width)
+#        these are the numerical values of the paramters
+#    - strict: governs whether it accepts any match in the first_arg, 
+#        or whether it needs both args to match
 def get_qsharp_cost(filename, first_arg, second_arg, input_size, strict = False):
 	csv.register_dialect('cost_csv_dialect', skipinitialspace = True)
 	with open(filename, newline="\n") as csvfile:
@@ -191,7 +197,7 @@ class DepthError(Exception):
 	pass
 
 
-############################# QRAM FUNCTIONS #################################
+############################# QRAM FUNCTION #################################
 # Finds the cost to look up words of size word_size in a table of size table_size,
 # subject to a depth constraint
 # First checks a simple look-up (Babbush et al.)
@@ -207,6 +213,8 @@ def get_lookup_cost(table_size, EXP_word_size):
 
 
 
+
+############################# RANK FUNCTION #################################
 # Cost of computing whether an n x m binary matrix has full rank
 # Depth is empirically derived from a linear estimation from Q#
 # Width does not match results because the width includes the output qubit
@@ -231,6 +239,9 @@ def rank_cost(EXP_n, EXP_m):
 	ancilla = log2(EXP_m*(3*EXP_m-1)/2 + EXP_n)
 	return QuantumCost(depth, width, gates, ancilla)
 
+
+
+############################# SIMON FUNCTIONS #################################
 # Cost of attacking an Even-Mansour cipher, for a fixed u
 def single_offline_simon_attack_cost(depth_limit, cipher, EXP_u, success_prob = -2):
 
@@ -325,9 +336,10 @@ def best_offline_simon_attack_cost(depth_limit, cipher, success_prob = -2, query
 	return best_cost
 
 
+
+############################# CIPHER ORACLE FUNCTIONS #################################
 # Looks up the cost of a cipher from CSV files
 def get_cipher_cost(cipher, guess_size = 0, word_size = 0):
-	# "Low T" is hard-coded; this should maybe be customizable
 	filename = "Simon/CipherCosts/" + Q_SHARP_SUBFOLDER + "/" + cipher.name
 	if COST_METRIC == ALL_GATES:
 		filename += "-all-gates"
@@ -336,11 +348,14 @@ def get_cipher_cost(cipher, guess_size = 0, word_size = 0):
 	cost.ancilla = log_subtract(cost.ancilla, log2(cipher.EXP_key_size))
 	return cost
 	
+# Cost with no gates/depth, but a width
+# Used to ensure qubits are allocated for keys
 def dummy_key_cost(cipher):
 	c = empty_cost()
 	c.width = log2(cipher.EXP_key_size)
 	return c
 
+# Data structure to hold data on different block ciphers
 class Cipher:
 	def __init__(self, name, EXP_block_size, EXP_key_size, EXP_pre_key_size, cipher_type, query_limit = None,parameter = None):
 		self.name = name
@@ -367,6 +382,7 @@ ciphers = [
 ]
 
 
+
 def tex_format_result(cipher, result, t_result):
 	# assuming a table of the form:
 	# name & bitlength & queries & gates & t-gates & depth & t-depth & qubits \\
@@ -380,16 +396,24 @@ def tex_format_result(cipher, result, t_result):
 	row += " & " + str(round(log_add(result['total'].width, result['total'].ancilla), 1)) + "\\\\\n"
 	return row
 
+
+########################################################################################
+#                           Main Computation 
+########################################################################################
 for query_limit in [True, False]:
 	for cipher in ciphers:
 		limit = 1000
 		if query_limit : limit = cipher.query_limit
 		print("=====Cipher: " + cipher.name + "-" + str(cipher.parameter) + " , query limit " + str(limit) + "==========")
+		COST_METRIC = ALL_GATES
+		# Finds the optimal number of queries by brute force, based on total gate cost
+		# answer is a dictionary of the costs and the query number ('u')
 		answer = best_offline_simon_attack_cost(1000, cipher, query_limit = limit)
+		# Adds data on the cipher itself
 		answer['cipher'] = get_cipher_cost(cipher, answer['u'], 11)
+		# For the optimal number of queries (answer['u']), finds the T cost of that attack
 		COST_METRIC = T_GATES
 		t_answer = single_offline_simon_attack_cost(1000, cipher, answer['u'])
-		COST_METRIC = ALL_GATES
 		print(tex_format_result(cipher, answer, t_answer))
 		print(" Linear system size: " + str(answer['oracle_reps']))
 

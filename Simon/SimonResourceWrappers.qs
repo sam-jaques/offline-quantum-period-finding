@@ -90,7 +90,7 @@ namespace SimonResourceWrappers
    }
 
    operation ElephantGroverEstimate(length : Int, nMessages : Int, isControlled : Bool) : Unit {
-        using ((messages, key, phase) = (Qubit[2*length*nMessages], Qubit[length], Qubit())){
+        using ((messages, key, phase) = (Qubit[2*length*nMessages], Qubit[128], Qubit())){
             ElephantGrover(length, key, messages, phase);
             ClearRegister(messages + key + [phase]);
         }

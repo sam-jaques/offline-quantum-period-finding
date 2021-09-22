@@ -67,12 +67,7 @@ namespace Quantum.ModularAddition
             {
                 subFolder = "LowWidth/";
             }
-
-            int[] bigTestSizes = { 4, 8, 16, 32, 64, 110, 128, 160, 192, 224, 256, 384, 512 };
-            int[] smallSizes = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25 };
-            int[] ellipticCurveTestSizes = { 110, 160, 192, 224, 256, 384, 521 };
-            int[] fixedEllipticCurveTestSizes = { 10, 30, 192, 224, 256, 384, 521 };
-
+            
             // Matrix dimensions of the actual attack
             int[] realWidths =   {47, 48, 50, 51, 63, 68, 76};
             int[] a1 = {134};
