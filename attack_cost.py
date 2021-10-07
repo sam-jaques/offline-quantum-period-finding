@@ -446,10 +446,10 @@ def get_grover_cost(cipher, prob_threshold = 20):
 for cipher in ciphers:
 	print("=====Cipher: " + cipher.name + "-" + str(cipher.parameter) + " , query limit " + str(limit) + "==========")
 	answer = dict()
+	COST_METRIC = ALL_GATES
 	answer['total'] = get_grover_cost(cipher)
 	answer['u'] = 0
 	t_answer = dict()
 	COST_METRIC = T_GATES
 	t_answer['total'] = get_grover_cost(cipher)
-	COST_METRIC = ALL_GATES
 	print(tex_format_result(cipher, answer, t_answer))
